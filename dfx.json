@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "rush-bootcamp-2-backend": {
+      "candid": "src/rush-bootcamp-2-backend/rush-bootcamp-2-backend.did",
+      "package": "rush-bootcamp-2-backend",
+      "type": "rust"
+    },
+    "rush-bootcamp-2-frontend": {
+      "dependencies": [
+        "rush-bootcamp-2-backend"
+      ],
+      "source": [
+        "src/rush-bootcamp-2-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "rush-bootcamp-2-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
