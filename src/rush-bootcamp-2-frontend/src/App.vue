@@ -7,7 +7,8 @@ async function handleSubmit(e) {
   e.preventDefault();
   const target = e.target;
   const name = target.querySelector('#name').value;
-  await rush_bootcamp_2_backend.greet(name).then((response) => {
+  const last_name = target.querySelector('#last_name').value;
+  await rush_bootcamp_2_backend.greet(name, last_name).then((response) => {
     greeting.value = response;
   });
 }
@@ -21,6 +22,7 @@ async function handleSubmit(e) {
     <form action="#" @submit="handleSubmit">
       <label for="name">Enter your name: &nbsp;</label>
       <input id="name" alt="Name" type="text" />
+      <input id="last_name" alt="Last Name" type="text" />
       <button type="submit">Click Me!</button>
     </form>
     <section id="greeting">{{ greeting }}</section>
