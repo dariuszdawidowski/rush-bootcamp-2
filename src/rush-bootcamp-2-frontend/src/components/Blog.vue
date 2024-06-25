@@ -2,6 +2,8 @@
     <button @click="pobierzWpisy">POBIERZ</button>
     <div>Hello Blog!</div>
     {{ wpisy }}
+    <input v-model="nowyBlog" type="text">
+    <button @click="dodajWpis">DODAJ</button>
 </template>
 
 <script>
@@ -12,11 +14,16 @@
 
         data() {
             return {
-                wpisy: []
+                wpisy: [],
+                nowyBlog: ''
             };
         },
 
         methods: {
+            async dodajWpis() {
+                await rush_bootcamp_2_backend.dodaj_wpis(this.nowyBlog);
+                this.pobierzWpisy();
+            },
             async pobierzWpisy() {
                 this.wpisy = await rush_bootcamp_2_backend.odczytaj_wpisy();
             }
