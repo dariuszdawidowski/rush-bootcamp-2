@@ -8,8 +8,10 @@
             <p>{{ wpis }}</p>
         </div>
     </div>
-    <input v-model="nowyBlog" type="text" class="border-1 border-blue-600 p-4">
-    <button @click="dodajWpis" class="bg-blue-600 rounded text-white p-4">DODAJ</button>
+    <div class="flex justify-center">
+        <input v-model="nowyBlog" type="text" class="border-4 border-blue-600 p-4">
+        <button @click="dodajWpis" class="bg-blue-600 rounded text-white p-4">DODAJ</button>
+    </div>
 </template>
 
 <script>
